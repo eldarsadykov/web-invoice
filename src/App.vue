@@ -6,6 +6,7 @@
     <RecipientBlock />
     <div class="font-bold">The following services have been completed and are detailed below:</div>
     <ItemsTable :items="exampleData" />
+    <div class="font-bold text-right">Total amount due: ${{ totalAmountDue}}</div>
   </div>
 </template>
 
@@ -25,4 +26,6 @@ const exampleData: InvoiceItem[] = [
     price: 15,
   },
 ]
+
+const totalAmountDue = exampleData.reduce((acc, { price, quantity }) => acc + price * quantity, 0)
 </script>
