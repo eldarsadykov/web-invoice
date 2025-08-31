@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import ServiceProviderInfo from '@/components/Header/ServiceProviderInfo.vue'
+import ServiceProviderInfo from '@/components/InvoiceHeader/ServiceProviderInfo.vue'
 
 const name = 'John Doe'
 

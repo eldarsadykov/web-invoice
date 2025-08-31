@@ -1,12 +1,12 @@
 <template>
-  <div class="grid gap-2">
+  <div class="grid gap-2 whitespace-pre-line">
     <div class="font-bold">
       {{ name }}
     </div>
-    <div class="whitespace-pre-line">
+    <div>
       {{ address }}
     </div>
-    <div class="whitespace-pre-line">
+    <div>
       {{ contactInfo }}
     </div>
   </div>

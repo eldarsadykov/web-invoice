@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="px-1 py-0.5 flex justify-between">
+    <div class="px-1 py-0.5 flex justify-between whitespace-pre-line">
       <span> {{ label }}</span>
       <span v-if="value"> {{ value }}</span>
     </div>
