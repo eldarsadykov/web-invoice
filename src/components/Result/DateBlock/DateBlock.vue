@@ -20,5 +20,5 @@
 </template>
 
 <script setup lang="ts">
-import DateBlockRow from '@/components/DateBlock/DateBlockRow.vue'
+import DateBlockRow from '@/components/Result/DateBlock/DateBlockRow.vue'
 </script>

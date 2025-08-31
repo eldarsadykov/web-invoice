@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import DateBlockRow from '@/components/DateBlock/DateBlockRow.vue'
+import DateBlockRow from '@/components/Result/DateBlock/DateBlockRow.vue'
 const recipientData = `John Doe
 23 Main Street
 Anytown

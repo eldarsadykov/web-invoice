@@ -16,8 +16,8 @@
 </template>
 
 <script setup lang="ts">
-import type { InvoiceItem } from '@/components/ItemsTable/invoice-item'
-import ItemsTableCell from '@/components/ItemsTable/ItemsTableCell.vue'
+import type { InvoiceItem } from '@/components/Result/ItemsTable/invoice-item'
+import ItemsTableCell from '@/components/Result/ItemsTable/ItemsTableCell.vue'
 
 const props = defineProps<{
   item: InvoiceItem

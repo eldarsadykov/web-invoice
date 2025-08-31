@@ -14,10 +14,10 @@
 </template>
 
 <script setup lang="ts">
-import type { InvoiceItem } from '@/components/ItemsTable/invoice-item'
+import type { InvoiceItem } from '@/components/Result/ItemsTable/invoice-item'
 import { computed } from 'vue'
-import ItemsTableRow from '@/components/ItemsTable/ItemsTableRow.vue'
-import ItemsTableHeaderCell from '@/components/ItemsTable/ItemsTableHeaderCell.vue'
+import ItemsTableRow from '@/components/Result/ItemsTable/ItemsTableRow.vue'
+import ItemsTableHeaderCell from '@/components/Result/ItemsTable/ItemsTableHeaderCell.vue'
 
 const props = defineProps<{
   items: InvoiceItem[]

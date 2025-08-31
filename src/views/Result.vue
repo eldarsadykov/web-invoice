@@ -25,11 +25,11 @@
 </template>
 
 <script setup lang="ts">
-import InvoiceHeader from '@/components/InvoiceHeader/InvoiceHeader.vue'
-import DateBlock from '@/components/DateBlock/DateBlock.vue'
-import RecipientBlock from '@/components/DateBlock/RecipientBlock.vue'
-import ItemsTable from '@/components/ItemsTable/ItemsTable.vue'
-import type { InvoiceItem } from '@/components/ItemsTable/invoice-item'
+import InvoiceHeader from '@/components/Result/InvoiceHeader/InvoiceHeader.vue'
+import DateBlock from '@/components/Result/DateBlock/DateBlock.vue'
+import RecipientBlock from '@/components/Result/DateBlock/RecipientBlock.vue'
+import ItemsTable from '@/components/Result/ItemsTable/ItemsTable.vue'
+import type { InvoiceItem } from '@/components/Result/ItemsTable/invoice-item'
 
 const exampleData: InvoiceItem[] = [
   {
