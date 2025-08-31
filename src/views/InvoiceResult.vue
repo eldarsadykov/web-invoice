@@ -3,8 +3,6 @@
     <div class="flex flex-col gap-4">
       <InvoiceHeader class="h-min" />
       <h1 class="font-bold text-3xl uppercase mt-12">Invoice</h1>
-      <DateBlock />
-      <RecipientBlock />
       <div class="font-bold">
         The following services have been completed and are detailed below:
       </div>
@@ -26,8 +24,6 @@
 
 <script setup lang="ts">
 import InvoiceHeader from '@/components/Result/InvoiceHeader/InvoiceHeader.vue'
-import DateBlock from '@/components/Result/DateBlock/DateBlock.vue'
-import RecipientBlock from '@/components/Result/DateBlock/RecipientBlock.vue'
 import ItemsTable from '@/components/Result/ItemsTable/ItemsTable.vue'
 import type { InvoiceItem } from '@/components/Result/ItemsTable/invoice-item'
 
