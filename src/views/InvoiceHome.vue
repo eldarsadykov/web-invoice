@@ -15,6 +15,11 @@
           placeholder="Street"
           class="border p-2 w-full rounded"
         />
+        <input
+          v-model="entity.address.postcode"
+          placeholder="Postcode"
+          class="border p-2 w-full rounded"
+        />
         <input v-model="entity.address.city" placeholder="City" class="border p-2 w-full rounded" />
         <input
           v-model="entity.contactDetails.email"

@@ -1,12 +1,12 @@
 <template>
   <div class="grid gap-2 whitespace-pre-line">
-    <div class="font-bold">
+    <div>
       {{ entity.name }}
     </div>
     <div>
       {{ entity.address.street }}
       <br />
-      {{ entity.address.city }}
+      {{ entity.address.postcode }} {{ entity.address.city }}
     </div>
     <div>
       {{ entity.contactDetails.email }}
