@@ -1,20 +1,15 @@
 <template>
   <div>
-    <ServiceProviderInfo :name="name" :address="address" :contact-info="contactInfo" />
+    <ServiceProviderInfo :name="name" :address="address" :contact-details="contactDetails" />
   </div>
 </template>
 
 <script setup lang="ts">
 import ServiceProviderInfo from '@/components/InvoiceHeader/ServiceProviderInfo.vue'
+import { useRoute } from 'vue-router'
 
-const name = 'John Doe'
-
-const address = `23 Main Street
-Anytown
-CA 12345
-`
-
-const contactInfo = `john@example.com
-+43 (0) 123 45 678 90
-`
+const route = useRoute()
+const name = (route.query.name as string) || 'N/A'
+const address = (route.query.address as string) || 'N/A'
+const contactDetails = (route.query.contactDetails as string) || 'N/A'
 </script>

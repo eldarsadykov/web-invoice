@@ -7,7 +7,7 @@
       {{ address }}
     </div>
     <div>
-      {{ contactInfo }}
+      {{ contactDetails }}
     </div>
   </div>
 </template>
@@ -22,7 +22,7 @@ defineProps({
     type: String,
     required: true,
   },
-  contactInfo: {
+  contactDetails: {
     type: String,
     required: true,
   },
