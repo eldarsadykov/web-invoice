@@ -8,7 +8,7 @@
       </tr>
     </thead>
     <tbody>
-      <ItemsTableRow v-for="item of items" :key="item.description" :item="item" />
+      <ItemsTableRow v-for="item of items" :key="item.description" :item="item" :showPeriod />
     </tbody>
   </table>
 </template>

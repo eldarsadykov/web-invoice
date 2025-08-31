@@ -34,7 +34,6 @@ import type { InvoiceItem } from '@/components/ItemsTable/invoice-item'
 const exampleData: InvoiceItem[] = [
   {
     description: 'Front-End and Audio Software Development',
-    period: { start: new Date('2025-05-22'), end: new Date('2025-05-30') },
     quantity: 100,
     unit: 'Hour',
     price: 15,

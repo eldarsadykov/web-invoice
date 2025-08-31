@@ -1,11 +1,13 @@
 <template>
   <tr class="border">
     <ItemsTableCell>{{ description }}</ItemsTableCell>
-    <ItemsTableCell v-if="period">
-      {{ period.start.toLocaleDateString() }} -
-      {{ period.end.toLocaleDateString() }}
-    </ItemsTableCell>
-    <ItemsTableCell v-else>-</ItemsTableCell>
+    <div v-if="showPeriod">
+      <ItemsTableCell v-if="period">
+        {{ period.start.toLocaleDateString() }} -
+        {{ period.end.toLocaleDateString() }}
+      </ItemsTableCell>
+      <ItemsTableCell v-else>-</ItemsTableCell>
+    </div>
     <ItemsTableCell>{{ quantity }}</ItemsTableCell>
     <ItemsTableCell>{{ unit }}</ItemsTableCell>
     <ItemsTableCell>${{ price }}</ItemsTableCell>
@@ -19,6 +21,7 @@ import ItemsTableCell from '@/components/ItemsTable/ItemsTableCell.vue'
 
 const props = defineProps<{
   item: InvoiceItem
+  showPeriod: boolean
 }>()
 
 const { description, period, quantity, unit, price } = props.item
