@@ -44,7 +44,7 @@ const store = useEntitiesStore()
 const entities = reactive<EntitiesPayload>(new EntitiesPayload())
 
 const handleSubmit = () => {
-  store.setEntities(entities) // save to Pinia store
-  router.push({ name: 'Result' }) // just navigate
+  store.setEntities(entities)
+  router.push({ name: 'InvoiceResult' })
 }
 </script>
