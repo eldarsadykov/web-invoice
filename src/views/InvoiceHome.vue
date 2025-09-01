@@ -22,8 +22,18 @@
         />
         <input v-model="entity.address.city" placeholder="City" class="border p-2 w-full rounded" />
         <input
+          v-model="entity.address.country"
+          placeholder="Country"
+          class="border p-2 w-full rounded"
+        />
+        <input
           v-model="entity.contactDetails.email"
           placeholder="Email"
+          class="border p-2 w-full rounded"
+        />
+        <input
+          v-model="entity.contactDetails.code"
+          placeholder="Code"
           class="border p-2 w-full rounded"
         />
         <input
@@ -43,7 +53,7 @@
         />
         <input
           v-model="generalInfo.accountHolder"
-          placeholder="Account Holder"
+          placeholder="Name"
           class="border p-2 w-full rounded"
         />
         <input v-model="generalInfo.iban" placeholder="IBAN" class="border p-2 w-full rounded" />
@@ -54,20 +64,16 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import { useEntitiesStore } from '@/stores/entities.ts'
-import { EntitiesPayload } from '@/models/entites-payload'
 import { useGeneralInfoStore } from '@/stores/general-info.ts'
 
 const router = useRouter()
-const store = useEntitiesStore()
-const { generalInfo } = useGeneralInfoStore()
 
-const entities = reactive<EntitiesPayload>(new EntitiesPayload())
+const { generalInfo } = useGeneralInfoStore()
+const { entities } = useEntitiesStore()
 
 const handleSubmit = () => {
-  store.setEntities(entities)
   router.push({ name: 'InvoiceResult' })
 }
 </script>

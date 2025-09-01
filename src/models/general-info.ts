@@ -6,7 +6,7 @@ export class GeneralInfo {
 
   constructor() {
     this.date = new Date().toLocaleDateString()
-    this.invoiceNumber = ''
+    this.invoiceNumber = '2025/001'
     this.accountHolder = ''
     this.iban = ''
   }

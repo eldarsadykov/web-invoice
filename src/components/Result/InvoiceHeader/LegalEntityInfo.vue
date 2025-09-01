@@ -1,5 +1,5 @@
 <template>
-  <div class="grid gap-2 whitespace-pre-line">
+  <div class="grid gap-2">
     <div>
       {{ entity.name }}
     </div>
@@ -7,11 +7,13 @@
       {{ entity.address.street }}
       <br />
       {{ entity.address.postcode }} {{ entity.address.city }}
+      <br />
+      {{ entity.address.country }}
     </div>
     <div>
       {{ entity.contactDetails.email }}
       <br />
-      {{ entity.contactDetails.phone }}
+      {{ entity.contactDetails.code }} {{ entity.contactDetails.phone }}
     </div>
   </div>
 </template>
