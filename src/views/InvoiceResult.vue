@@ -10,10 +10,10 @@
       <div class="font-bold text-right">Total amount due: ${{ totalAmountDue }}</div>
     </div>
     <div class="flex flex-col gap-4">
-      <div class="font-bold">Account details</div>
+      <div class="font-bold">Account Details</div>
       <div>
-        <div>Account holder: {{ exampleDetails.holder }}</div>
-        <div>IBAN: {{ exampleDetails.iban }}</div>
+        <div>Account Holder: {{ generalInfo.accountHolder }}</div>
+        <div>IBAN: {{ generalInfo.iban }}</div>
       </div>
       <div class="font-bold">
         For bank transfers, please include the invoice number in the “Payment reference” field.
@@ -26,6 +26,7 @@
 import InvoiceHeader from '@/components/Result/InvoiceHeader/InvoiceHeader.vue'
 import ItemsTable from '@/components/Result/ItemsTable/ItemsTable.vue'
 import type { InvoiceItem } from '@/components/Result/ItemsTable/invoice-item'
+import { useGeneralInfoStore } from '@/stores/general-info.ts'
 
 const exampleData: InvoiceItem[] = [
   {
@@ -36,10 +37,7 @@ const exampleData: InvoiceItem[] = [
   },
 ]
 
-const exampleDetails = {
-  holder: 'John Doe',
-  iban: 'ATXX XXXX XXXX XXXX XXXX',
-}
+const { generalInfo } = useGeneralInfoStore()
 
 const totalAmountDue = exampleData.reduce((acc, { price, quantity }) => acc + price * quantity, 0)
 </script>

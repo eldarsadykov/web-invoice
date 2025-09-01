@@ -32,6 +32,22 @@
           class="border p-2 w-full rounded"
         />
       </div>
+
+      <div class="space-y-2 border p-4 rounded">
+        <h2 class="font-semibold">General Info</h2>
+        <input v-model="generalInfo.date" placeholder="Date" class="border p-2 w-full rounded" />
+        <input
+          v-model="generalInfo.invoiceNumber"
+          placeholder="Invoice Number"
+          class="border p-2 w-full rounded"
+        />
+        <input
+          v-model="generalInfo.accountHolder"
+          placeholder="Account Holder"
+          class="border p-2 w-full rounded"
+        />
+        <input v-model="generalInfo.iban" placeholder="IBAN" class="border p-2 w-full rounded" />
+      </div>
       <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
     </form>
   </div>
@@ -42,9 +58,11 @@ import { reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import { useEntitiesStore } from '@/stores/entities.ts'
 import { EntitiesPayload } from '@/models/entites-payload'
+import { useGeneralInfoStore } from '@/stores/general-info.ts'
 
 const router = useRouter()
 const store = useEntitiesStore()
+const { generalInfo } = useGeneralInfoStore()
 
 const entities = reactive<EntitiesPayload>(new EntitiesPayload())
 

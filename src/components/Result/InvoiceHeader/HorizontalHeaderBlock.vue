@@ -1,6 +1,6 @@
 <template>
-  <div class="grid gap-2">
-    <div class="font-bold">
+  <div class="grid gap-2 auto-rows-max">
+    <div class="font-bold h-min">
       {{ title }}
     </div>
     <slot />
