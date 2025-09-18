@@ -8,8 +8,14 @@
     </HorizontalHeaderBlock>
 
     <div class="grid gap-2 auto-rows-max">
-      <HorizontalHeaderBlock title="Date:">
-        {{ generalInfo.date }}
+      <HorizontalHeaderBlock title="Invoice Date:">
+        {{ date }}
+      </HorizontalHeaderBlock>
+      <HorizontalHeaderBlock title="Service Date:">
+        {{ date }}
+      </HorizontalHeaderBlock>
+      <HorizontalHeaderBlock title="Due Date:">
+        {{ dueDate }}
       </HorizontalHeaderBlock>
       <HorizontalHeaderBlock title="Invoice Number:">
         {{ generalInfo.invoiceNumber }}
@@ -23,7 +29,17 @@ import LegalEntityInfo from '@/components/Result/InvoiceHeader/LegalEntityInfo.v
 import { useEntitiesStore } from '@/stores/entities.ts'
 import HorizontalHeaderBlock from '@/components/Result/InvoiceHeader/HorizontalHeaderBlock.vue'
 import { useGeneralInfoStore } from '@/stores/general-info.ts'
+import { computed } from 'vue'
 
 const { generalInfo } = useGeneralInfoStore()
 const { entities } = useEntitiesStore()
+const date = computed(() => {
+  return new Date(generalInfo.date).toLocaleDateString()
+})
+
+const dueDate = computed(() => {
+  const date = new Date(generalInfo.date)
+  date.setDate(date.getDate() + 14)
+  return date.toLocaleDateString()
+})
 </script>

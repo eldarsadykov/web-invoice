@@ -8,7 +8,13 @@
       </tr>
     </thead>
     <tbody>
-      <ItemsTableRow v-for="item of items" :key="item.description" :item="item" :showPeriod />
+      <ItemsTableRow
+        v-for="(item, index) of items"
+        :key="item.description"
+        :item="item"
+        :showPeriod
+        :position="index + 1"
+      />
     </tbody>
   </table>
 </template>
@@ -24,6 +30,7 @@ const props = defineProps<{
 }>()
 
 enum HeaderCell {
+  Position = 'Position',
   Description = 'Description',
   Period = 'Period',
   Quantity = 'Quantity',
@@ -33,6 +40,7 @@ enum HeaderCell {
 }
 
 const headerCells: HeaderCell[] = [
+  HeaderCell.Position,
   HeaderCell.Description,
   HeaderCell.Period,
   HeaderCell.Quantity,

@@ -15,6 +15,9 @@
       <br />
       {{ entity.contactDetails.code }} {{ entity.contactDetails.phone }}
     </div>
+    <div v-if="entity.taxNumber">
+      {{ entity.taxNumber }}
+    </div>
   </div>
 </template>
 

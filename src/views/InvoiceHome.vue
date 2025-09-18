@@ -45,7 +45,12 @@
 
       <div class="space-y-2 border p-4 rounded">
         <h2 class="font-semibold">General Info</h2>
-        <input v-model="generalInfo.date" placeholder="Date" class="border p-2 w-full rounded" />
+        <input
+          type="date"
+          v-model="dateString"
+          placeholder="Date"
+          class="border p-2 w-full rounded"
+        />
         <input
           v-model="generalInfo.invoiceNumber"
           placeholder="Invoice Number"
@@ -67,11 +72,25 @@
 import { useRouter } from 'vue-router'
 import { useEntitiesStore } from '@/stores/entities.ts'
 import { useGeneralInfoStore } from '@/stores/general-info.ts'
+import { computed, watch } from 'vue'
 
 const router = useRouter()
 
-const { generalInfo } = useGeneralInfoStore()
+const { generalInfo, setExchangeRate } = useGeneralInfoStore()
 const { entities } = useEntitiesStore()
+
+const dateString = computed({
+  get() {
+    return generalInfo.date
+      ? generalInfo.date.toISOString().substring(0, 10) // YYYY-MM-DD
+      : ''
+  },
+  set(value: string) {
+    generalInfo.date = value ? new Date(value) : new Date()
+  },
+})
+
+watch(() => generalInfo.date, setExchangeRate)
 
 const handleSubmit = () => {
   router.push({ name: 'InvoiceResult' })
