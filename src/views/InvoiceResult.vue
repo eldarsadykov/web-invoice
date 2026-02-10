@@ -44,9 +44,9 @@ import { useTitle } from '@vueuse/core'
 const exampleData: InvoiceItem[] = [
   {
     description: import.meta.env.VITE_INVOICE_ITEM_DESCRIPTION,
-    quantity: parseInt(import.meta.env.VITE_INVOICE_ITEM_QUANTITY, 10),
+    quantity: Number(import.meta.env.VITE_INVOICE_ITEM_QUANTITY),
     unit: import.meta.env.VITE_INVOICE_ITEM_UNIT,
-    price: parseInt(import.meta.env.VITE_INVOICE_ITEM_PRICE, 10),
+    price: Number(import.meta.env.VITE_INVOICE_ITEM_PRICE),
   },
 ]
 
