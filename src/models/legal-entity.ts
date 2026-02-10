@@ -22,7 +22,7 @@ export class LegalEntity {
         code: import.meta.env.VITE_PROVIDER_CODE,
         phone: import.meta.env.VITE_PROVIDER_PHONE,
       }
-      this.taxNumber = import.meta.env.VITE_PROVIDER_TAXNUMBER
+      this.taxNumber = import.meta.env.VITE_PROVIDER_TAX_NUMBER
     } else {
       this.name = import.meta.env.VITE_CLIENT_NAME
       this.address = {
@@ -36,7 +36,7 @@ export class LegalEntity {
         code: import.meta.env.VITE_CLIENT_CODE,
         phone: import.meta.env.VITE_CLIENT_PHONE,
       }
-      this.taxNumber = import.meta.env.VITE_CLIENT_TAXNUMBER
+      this.taxNumber = import.meta.env.VITE_CLIENT_TAX_NUMBER
     }
   }
 }
