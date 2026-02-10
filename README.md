@@ -1,39 +1,59 @@
 # web-invoice
 
-This template should help get you started developing with Vue 3 in Vite.
+A simple invoice generator built with Vue + Vite. Designed to run locally so your invoice data stays on your machine (no remote backend).
 
-## Recommended IDE Setup
+Most values are currently configured via environment variables (see `./.env.example`). More flexibility is planned, but not a priority right now.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Requirements
 
-## Type Support for `.vue` Imports in TS
+- Node.js (recommended: latest LTS)
+- npm (or pnpm/yarn if you prefer)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Setup
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+Install dependencies:
 
 ```sh
 npm install
+````
+
+Create your local env file:
+
+```sh
+cp .env.example .env
 ```
 
-### Compile and Hot-Reload for Development
+Edit `.env` to match your provider/client details.
+
+## Development
+
+Run the dev server:
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## Production
+
+Type-check, build and minify:
 
 ```sh
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+(Optional) Preview the production build locally:
+
+```sh
+npm run preview
+```
+
+## Lint
 
 ```sh
 npm run lint
 ```
+
+## Notes
+
+* Only variables prefixed with `VITE_` are exposed to the app.
+* `.env` may contain personal data — don’t commit it. Consider adding `.env` to `.gitignore` if it isn’t already.
