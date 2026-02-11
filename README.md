@@ -4,6 +4,8 @@ A simple invoice generator built with Vue + Vite. Designed to run locally so you
 
 Most values are currently configured via environment variables (see `./.env.example`). More flexibility is planned, but not a priority right now.
 
+Use the default print dialog of the browser to generate PDFs.
+
 ## Requirements
 
 - Node.js (recommended: latest LTS)
